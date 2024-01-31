@@ -1,4 +1,2 @@
-class Rectangle {
-   
-}
+cmodule.exports = class Rectangle {};
  
