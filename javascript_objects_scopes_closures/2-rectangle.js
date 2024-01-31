@@ -6,5 +6,5 @@ exports.module = class Rectangle {
             this.height = h;
          }
       }
-}
+};
   
