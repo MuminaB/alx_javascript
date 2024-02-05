@@ -10,7 +10,7 @@ request(process.argv[2], function (error, response, body) {
                 completedtasks[todo.userId] += 1;
             }
         });
-        console.log(completed);
+        console.log(completedtasks);
     }
 });
    
