@@ -11,5 +11,9 @@ request(url, function (error, response, body) {
       });
     });
   }
+  if (error) {
+    console.error('error:: ', response.body);
+    return;
+  };
 });
   
