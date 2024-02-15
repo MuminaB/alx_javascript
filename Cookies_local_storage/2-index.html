@@ -28,6 +28,7 @@
             <button id="login" type="submit">Log me in</button>
         
         </form>
+        
     </div>
     <div>
         <h1>Cookies</h1>
@@ -43,18 +44,40 @@
         function setCookies() {
             document.cookie = "firstname=" + firstname.value;
             document.cookie = "email=" + email.value;
+
+            const date = new Date();
+            date.setDate(date.getDate() + 10);
+            document.cookie = "expires=" + date.toGMTString();
+        }
+
+        function getCookie(name) {
+            // to split the cookie string into an array of name-value pairs
+            const cookieArray = document.cookie.split("; ");
+            for (const cookie of cookieArray) {
+                const cookiePair = cookie.split("=");
+                if (name == cookiePair[0]) {
+                    return cookiePair[1];
+                } 
+            }
+            return "";
         }
 
         function showCookies() {
+            //code modification
+            const firstname = getCookie("firstname");
+            const email = getCookie("email");
+
+    
             const p = document.createElement("p");
-            p.innerHTML = "Cookies: " + document.cookie;
+            p.innerHTML = "Email: " + email + " - Firstname: " + firstname;
             document.body.appendChild(p);
         }
 
         // adding an event listener
-        login.addEventListener("click", setCookies);
+        login.addEventListener("submit", setCookies);
         show.addEventListener("click", showCookies);
     </script>
 </body>
 
 </html>
+  

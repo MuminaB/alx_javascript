@@ -21,11 +21,13 @@
 </head>
 <body>
     <div>
-        <h1>Login to the website</h1>
-        <input type="text" id="firstname" name="firstname" placeholder="firstname">
-        <input type="email" id="email" name="email" placeholder="Email">
-        <button id="login" type="submit">Log me in</button>
+        <form action="">
+            <h1>Login to the website</h1>
+            <input type="text" id="firstname" name="firstname" placeholder="firstname">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <button id="login" type="submit">Log me in</button>
         
+        </form>
     </div>
     <div>
         <h1>Cookies</h1>
@@ -42,7 +44,7 @@
             document.cookie = "firstname=" + firstname.value;
             document.cookie = "email=" + email.value;
 
-            let date = new Date();
+            const date = new Date();
             date.setDate(date.getDate() + 10);
             document.cookie = "expires=" + date.toGMTString();
         }
