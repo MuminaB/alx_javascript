@@ -44,7 +44,7 @@
 
             let date = new Date();
             date.setDate(date.getDate() + 10);
-            document.cookie = "expires=" + date.toUTCString();
+            document.cookie = "expires=" + date.toGMTString();
         }
 
         function showCookies() {
