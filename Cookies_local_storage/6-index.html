@@ -19,7 +19,7 @@
         }
 
         function addItemToCart(item) {
-            localStorage.setItem(item, true);
+            sessionStorage.setItem(item, true);
         }
 
         function createStore() {
@@ -38,7 +38,7 @@
         }
 
         function displayCart() {
-            if (localStorage.length === 0) {
+            if (sessionStorage.length === 0) {
                 return;
             }
             
@@ -46,8 +46,8 @@
             document.body.appendChild(p);
             // Count the number of items in the local storage
             const count = 0;
-            for (const key in localStorage) {
-                if (localStorage.getItem(key) === "true") {
+            for (const key in sessionStorage) {
+                if (sessionStorage.getItem(key) === "true") {
                 count++;
                 }
             }
